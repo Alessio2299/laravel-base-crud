@@ -6,7 +6,10 @@
 
 @section('content')
     <div class="container-fluid">
-        <h1 class="text-center">All Comics</h1>
+        <div class="d-flex justify-content-around align-items-center">
+            <h1 class="text-center">All Comics</h1>
+            <a href="{{route('comics.create')}}"><button>Add Comic</button></a>
+        </div>
         <table class="table">
             <thead>
             <tr>
@@ -25,10 +28,10 @@
                 @foreach ($comics as $comic)
                     <tr>
                         <th scope="row">{{$comic->id}}</th>
-                        <td><img src="{{$comic->thumb}}" alt="{{$comic->title}}"></td>
+                        <td><img class="my_width" src="{{$comic->thumb}}" alt="{{$comic->title}}"></td>
                         <td>{{$comic->title}}</td>
                         <td>{{$comic->description}}</td>
-                        <td>{{$comic->price}}</td>
+                        <td>{{$comic->price}} €</td>
                         <td>{{$comic->type}}</td>
                         <td>{{$comic->series}}</td>
                         <td>{{$comic->sale_date}}</td>
