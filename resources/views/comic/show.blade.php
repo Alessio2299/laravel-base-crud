@@ -22,9 +22,17 @@
       </div>
     </div>
   </div>
-  <div class="text-center">
-    <a href="{{route('comics.edit', $comic->id)}}"><button>Edit</button></a>
-    <a href="{{route('comics.index')}}"><button>Back</button></a>
-    <a href="{{route('comics.index')}}"><button>Delete</button></a>
+  <div class="text-center d-flex justify-content-center">
+    <a class="mr-2" href="{{route('comics.edit', $comic->id)}}"><button>Edit</button></a>
+    <a class="mr-2" href="{{route('comics.index')}}"><button>Back</button></a>
+    <form action="{{route('comics.destroy', ['comic' => $comic->id])}}" method="POST">
+      @csrf
+      @method('DELETE')
+      <button class="mr-2" id="confirm" type="submit">Delete</button>
+    </form>
   </div>
+@endsection
+
+@section('javascript')
+  <script src="{{asset('js/myjavascript.js')}}"></script>   
 @endsection

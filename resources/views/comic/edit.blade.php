@@ -52,7 +52,7 @@
         </div>
         <div class="button text-center">
           <button class="mr-2" type="submit">Edit</button>
-          <button type="submit">Delete</button>
+          <a href="{{route('comics.index')}}"><button>Back</button></a>
         </div>
       </form>
     </div>
