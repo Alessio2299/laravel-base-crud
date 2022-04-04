@@ -23,6 +23,8 @@
     </div>
   </div>
   <div class="text-center">
-    <a href="{{route('comics.index')}}"><button>Torna Indietro</button></a>
+    <a href="{{route('comics.edit', $comic->id)}}"><button>Edit</button></a>
+    <a href="{{route('comics.index')}}"><button>Back</button></a>
+    <a href="{{route('comics.index')}}"><button>Delete</button></a>
   </div>
 @endsection
